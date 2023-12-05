@@ -32,10 +32,15 @@ const HeroSection = () => {
             </div>
           </h1>
           <p className="text-[#ADB7bE] text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Consectetur, similique natus itaque, veritatis recusandae distinctio
-            laboriosam eos dolorem, veniam sapiente et unde ratione accusamus
-            nihil. Quaerat suscipit provident sapiente et.
+            Greetings! I`m Ran Sayada, a passionate full-stack engineer on the
+            lookout for exciting new opportunities. With a background in both
+            front-end and back-end development (React, Angular, Vue,
+            Next.js,Node.js Nest,js etc.), I thrive on crafting innovative and
+            efficient solutions that bring ideas to life. My experience in the
+            Fullstack world has equipped me with a diverse skill set, from
+            designing intuitive user interfaces to implementing robust
+            server-side functionalities. If you liked my portfolio, you can
+            contact me or check my projects down below.
           </p>
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white">
