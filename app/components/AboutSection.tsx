@@ -3,8 +3,47 @@ import React, { useState, useTransition } from "react";
 import Image from "next/image";
 import TabButton from "./TabButton";
 
+//TODO: Why Experience dose not work ? change back to start with the skills .
+const TAB_DATA = [
+  {
+    title: "Skills",
+    id: "skills",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>Node.js (JS and TS)</li>
+        <li>Express and Nest.js</li>
+        <li>MongoDB and PostgreSQL</li>
+        <li>React, Angular and Vue</li>
+        <li>HTML5, CSS3, SASS, Styled Components and Tailwind</li>
+        <li>AWS, Docker, K8S with Microservices</li>
+        <li>ElasticSearch, Grafana, Postman, Swagger and more.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Education",
+    id: "education",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>2021-2022 Coding Academy - Full stack course.</li>
+        <li>2019-2021 Ben Gurion University - Computer Science degree.</li>
+      </ul>
+    ),
+  },
+  {
+    title: "Experience",
+    id: "experience",
+    content: (
+      <ul className="list-disc pl-2">
+        <li>2022-2023 Bittax - Tax solutions for crypto consumers.</li>
+        <li>2019-2021 Elementor - Wordpress websites building platform.</li>
+      </ul>
+    ),
+  },
+];
+
 const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("experience");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id: any) => {
@@ -22,7 +61,7 @@ const AboutSection = () => {
           alt=""
           src="/view-3d-personal-computer-with-workstation-office-items.jpg"
         />
-        <div>
+        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base md:text-lg">
             Im a Fullstack web developer with passion for creating interactive
@@ -65,11 +104,14 @@ const AboutSection = () => {
               Education
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("certification")}
-              active={tab === "certification"}
+              selectTab={() => handleTabChange("Experience")}
+              active={tab === "experience"}
             >
-              Certification
+              Experience
             </TabButton>
+          </div>
+          <div className="mt-8">
+            {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
         </div>
       </div>
