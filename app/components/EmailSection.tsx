@@ -1,10 +1,23 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 //TODO: finish with the email sending
 const EmailSection = () => {
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const handleSubmit = (e: any) => {
+    const myMail = "ran.sayada@gmail.com";
+    e.preventDefault();
+    setEmail(e.target.email.value);
+    setSubject(e.target.subject.value.split(" ").join("%20"));
+    setMessage(e.target.message.value.split(" ").join("%20"));
+    window.open(`mailto:${myMail}?subject=${subject}
+    &body=${message}`);
+  };
   return (
     <section className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative">
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-y-1/2"></div>
@@ -24,7 +37,7 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form className="flex flex-col">
+        <form className="flex flex-col" onSubmit={handleSubmit}>
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -74,7 +87,7 @@ const EmailSection = () => {
             type="submit"
             className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
           >
-            Send Message
+            Send Mail
           </button>
         </form>
       </div>
