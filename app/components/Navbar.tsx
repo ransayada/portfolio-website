@@ -9,14 +9,17 @@ const navLinks = [
   {
     title: "About",
     path: "#about",
+    top: 700,
   },
   {
     title: "Projects",
     path: "#projects",
+    top: 1300,
   },
   {
     title: "Contact",
     path: "#contact",
+    top: 2500,
   },
 ];
 
@@ -52,7 +55,11 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <NavbarLink href={link.path} title={link.title} />
+                <NavbarLink
+                  href={link.path}
+                  title={link.title}
+                  top={link.top}
+                />
               </li>
             ))}
           </ul>
