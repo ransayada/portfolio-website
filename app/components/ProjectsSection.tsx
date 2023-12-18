@@ -8,7 +8,7 @@ const projectsData = [
     id: 1,
     title: "Brainstorm",
     description: "Next js AI utility project",
-    image: "./projects/newportfolio/portfolio.png",
+    image: "./projects/brainstorm/brainstorm.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/ransayada/BrainstormAI",
     previewUrl: "https://brainstorm-ai-phi.vercel.app/",
